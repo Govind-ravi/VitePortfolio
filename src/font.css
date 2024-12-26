@@ -1,0 +1,111 @@
+@font-face {
+  font-family: "Nunito";
+  src: url("./assets/fonts/static/Nunito-ExtraLight.ttf") format("truetype");
+  font-weight: 200; /* ExtraLight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("./assets/fonts/static/Nunito-Light.ttf") format("truetype");
+  font-weight: 300; /* Light */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("./assets/fonts/static/Nunito-Regular.ttf") format("truetype");
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("./assets/fonts/static/Nunito-Medium.ttf") format("truetype");
+  font-weight: 500; /* Medium */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("./assets/fonts/static/Nunito-SemiBold.ttf") format("truetype");
+  font-weight: 600; /* SemiBold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("./assets/fonts/static/Nunito-Bold.ttf") format("truetype");
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("./assets/fonts/static/Nunito-ExtraBold.ttf") format("truetype");
+  font-weight: 800; /* ExtraBold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("./assets/fonts/static/Nunito-Black.ttf") format("truetype");
+  font-weight: 900; /* Black */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("./assets/fonts/static/Nunito-ExtraLightItalic.ttf") format("truetype");
+  font-weight: 200; /* ExtraLight Italic */
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("./assets/fonts/static/Nunito-LightItalic.ttf") format("truetype");
+  font-weight: 300; /* Light Italic */
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("./assets/fonts/static/Nunito-Italic.ttf") format("truetype");
+  font-weight: 400; /* Regular Italic */
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("./assets/fonts/static/Nunito-MediumItalic.ttf") format("truetype");
+  font-weight: 500; /* Medium Italic */
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("./assets/fonts/static/Nunito-SemiBoldItalic.ttf") format("truetype");
+  font-weight: 600; /* SemiBold Italic */
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("./assets/fonts/static/Nunito-BoldItalic.ttf") format("truetype");
+  font-weight: 700; /* Bold Italic */
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("./assets/fonts/static/Nunito-ExtraBoldItalic.ttf") format("truetype");
+  font-weight: 800; /* ExtraBold Italic */
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("./assets/fonts/static/Nunito-BlackItalic.ttf") format("truetype");
+  font-weight: 900; /* Black Italic */
+  font-style: italic;
+}
