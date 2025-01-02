@@ -26,7 +26,7 @@ function ExpandingComponent({ tag }) {
                 : "top-0 w-[200vw] rounded-none"
             }`
           : "top-full w-[50vw] rounded-t-full"
-      } h-screen fixed left-1/2 -translate-x-1/2 transition-all overflow-hidden duration-[1s] z-10`}
+      } h-screen fixed left-1/2 -translate-x-1/2 transition-all overflow-hidden duration-[1s] z-[110]`}
     >
       <h1 className="text-4xl md:text-5xl font-semibold absolute w-[80vw] text-center top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
         {tag}

@@ -1,6 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { FaHome, FaTools } from "react-icons/fa";
+import {
+  FaHome,
+  FaTools,
+  FaGithub,
+  FaCaretDown,
+  FaChevronDown,
+} from "react-icons/fa";
 import { PiGraduationCapFill } from "react-icons/pi";
 import { AiFillProject } from "react-icons/ai";
 import { FaPersonBiking } from "react-icons/fa6";
@@ -9,55 +15,69 @@ import { FaXTwitter, FaLinkedin } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 import { ThemeContext } from "./ThemeProvider";
+import Home from "../assets/Home.png";
+import Education from "../assets/Education.png";
+import Skills from "../assets/Skills.png";
+import Projects from "../assets/Projects.png";
+import Career from "../assets/Career.png";
 
 const menuItems = [
   {
     name: "Welcome",
     link: "/",
     symbol: <FaHome />,
+    image: Home,
   },
   {
     name: "My Academia",
     link: "/education",
     symbol: <PiGraduationCapFill />,
+    image: Education,
   },
   {
     name: "The Dev Deck",
     link: "/tools",
     symbol: <FaTools />,
+    image: Skills,
   },
   {
     name: "My Code Canvas",
     link: "/projects",
     symbol: <AiFillProject />,
+    image: Projects,
   },
   {
     name: "Career Chronics",
     link: "/career",
     symbol: <FaPersonBiking />,
+    image: Career,
   },
 ];
 
 const socials = [
   {
     symbol: <MdEmail />,
-    link: "",
+    link: "mailto:govindnr20122001@gmail.com",
   },
   {
     symbol: <FaInstagram />,
-    link: "",
+    link: "https://www.instagram.com/govind.govu.2012",
   },
   {
     symbol: <FaLinkedin />,
-    link: "",
+    link: "https://linkedin.com/in/govind-ravi",
   },
   {
     symbol: <FaXTwitter />,
-    link: "",
+    link: "https://x.com/GovindR20122001",
   },
   {
     symbol: <IoLogoWhatsapp />,
-    link: "",
+    link: "https://wa.me/+918792589747",
+  },
+  {
+    symbol: <FaGithub />,
+    link: "https://github.com/Govind-ravi",
   },
 ];
 
@@ -66,6 +86,7 @@ function Menu() {
   const [isEnter, setIsEnter] = useState(false);
   const [isMenu, setisMenu] = useState(false);
   const [isMobileMenu, setIsMobileMenu] = useState(false);
+  const [isMobileSocial, setIsMobileSocial] = useState(false);
   useEffect(() => {
     setTimeout(() => {
       setIsEnter(true);
@@ -102,7 +123,13 @@ function Menu() {
           >
             <div className="text-5xl text-secondaryText">{item.symbol}</div>
             <div>
-              <div className="w-[0px] group-hover:w-[150px] group-hover:h-[100px] h-0 bg-gray-600 rounded-lg transition-all duration-500"></div>
+              <div className="w-[0px] group-hover:w-[150px] group-hover:h-[100px] h-0 transition-all duration-500 rounded-lg overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-full h-full object-contain rounded-lg"
+                />
+              </div>
               <h1 className="text-2xl font-semibold group-hover:text-base menu-headline duration-200">
                 {item.name}
               </h1>
@@ -111,12 +138,14 @@ function Menu() {
         ))}
         <div className="flex justify-evenly">
           {socials.map((item, i) => (
-            <div
-              key={i}
-              className="text-4xl transition-all duration-200 hover:scale-90 cursor-pointer"
-            >
-              {item.symbol}
-            </div>
+            <a href={item.link} target="_blank">
+              <div
+                key={i}
+                className="text-4xl transition-all duration-200 hover:scale-90 cursor-pointer"
+              >
+                {item.symbol}
+              </div>
+            </a>
           ))}
         </div>
       </div>
@@ -130,7 +159,9 @@ function Menu() {
 
       {/* Menu for small screens */}
       <div
-        onClick={() => setIsMobileMenu((prev) => !prev)}
+        onClick={() => {
+          setIsMobileMenu((prev) => !prev), setIsMobileSocial(false);
+        }}
         style={{ backgroundColor: themeColor }}
         className="md:hidden fixed w-16 h-16 xs:w-24 xs:h-24 rounded-full left-1/2 -translate-x-1/2 bottom-12 flex items-center justify-center z-[100] xs:text-xl font-semibold"
       >
@@ -152,7 +183,7 @@ function Menu() {
               to={isMobileMenu && menu.link}
               key={i}
               style={{
-                transform: `translate(${x}px, ${y}px)`
+                transform: `translate(${x}px, ${y}px)`,
               }}
               className={`absolute text-secondaryText text-3xl xs:text-4xl transition-all duration-500 ${
                 isMobileMenu ? "opacity-100" : "opacity-0"
@@ -162,12 +193,51 @@ function Menu() {
             </NavLink>
           );
         })}
-        {/* Overlay */}
       </div>
+      {/* Socials for Mobile Screens */}
       <div
-        onClick={() => setIsMobileMenu(false)}
+        className={`fixed top-4 right-4 w-10 ${
+          isMobileSocial ? " max-h-80" : "max-h-10"
+        } pb-2 overflow-hidden rounded-full text-secondaryText md:hidden z-[100] flex flex-col items-center transition-all duration-500 ease-in-out gap-5`}
+      >
+        <div
+          onClick={() => {
+            setIsMobileSocial((prev) => !prev), setIsMobileMenu(false);
+          }}
+          className={`flex flex-col ${
+            isMobileSocial ? "rotate-180" : "rotate-0"
+          } items-center justify-center mt-1 transition-all duration-500 ease-in-out`}
+        >
+          <FaCaretDown className="text-2xl" />
+          <FaChevronDown className=" -mt-3" />
+        </div>
+        {socials.map((item, i) => (
+          <a href={item.link} target="_blank">
+            <div
+              key={i}
+              className="text-2xl transition-all duration-200 hover:scale-90 cursor-pointer"
+              style={{
+                animation: isMobileSocial
+                  ? `fadeDown 0.5s ease-in-out`
+                  : "none",
+                animationDelay: `${i * 0.05}s`,
+                animationFillMode: "both",
+              }}
+            >
+              {item.symbol}
+            </div>
+          </a>
+        ))}
+      </div>
+      {/* Overlay */}
+      <div
+        onClick={() => {
+          setIsMobileMenu(false), setIsMobileSocial(false);
+        }}
         className={`md:hidden fixed top-0 left-0 z-[90] ${
-          isMobileMenu ? "opacity-100 w-screen h-screen" : "opacity-0 w-0 h-0"
+          isMobileMenu || isMobileSocial
+            ? "opacity-100 w-screen h-screen"
+            : "opacity-0 w-0 h-0"
         } transition-opacity delay-200`}
       ></div>
     </>
