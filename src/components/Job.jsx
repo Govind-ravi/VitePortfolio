@@ -167,7 +167,10 @@ function Job() {
   }, []);
 
   return (
-    <div className="w-screen h-screen overflow-hidden relative bg-[#2c2c2c]/50">
+    <div
+      style={{ height: window.innerHeight }}
+      className="w-screen overflow-hidden relative bg-[#2c2c2c]/50"
+    >
       <div
         style={{
           backgroundColor: themeColor,

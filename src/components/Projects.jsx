@@ -138,7 +138,7 @@ function Projects() {
   }, [activeIndex]);
 
   return (
-    <div className="h-screen -z-10">
+    <div style={{ height: window.innerHeight }} className="-z-10">
       <div
         ref={containerRef}
         className={`flex absolute ml-4 md:ml-12 mr-4 overflow-scroll transition-all duration-500 ${

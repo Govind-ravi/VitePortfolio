@@ -36,8 +36,11 @@ function Homepage() {
   }, []);
 
   return (
-    <div className="w-screen h-screen flex items-end justify-between relative overflow-hidden">
-      <div className="w-full lg:w-[70%] h-screen self-center text-center cursor-default relative">
+    <div
+      style={{ height: window.innerHeight }}
+      className="w-screen flex items-end justify-between relative overflow-hidden"
+    >
+      <div className="w-full lg:w-[70%] h-full self-center text-center cursor-default relative">
         {/* Text Content */}
         <div className="absolute left-1/2 -translate-x-1/2 top-[45%] md:top-1/2 -translate-y-1/2 space-y-2 w-full">
           <h1

@@ -155,8 +155,8 @@ function TeckStack() {
       {/* Horizontal scrollable container */}
       <div
         ref={containerRef}
-        className="w-screen h-screen flex snap-x overflow-x-scroll"
-        style={{ scrollSnapType: "x mandatory" }}
+        className="w-screen flex snap-x overflow-x-scroll"
+        style={{ scrollSnapType: "x mandatory", height: window.innerHeight }}
       >
         {[...Array(snaps)].map((_, index) => (
           <div

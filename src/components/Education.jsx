@@ -96,8 +96,8 @@ function Education() {
   return (
     <div
       ref={containerRef}
-      className="w-screen h-screen overflow-scroll"
-      style={{ whiteSpace: "nowrap" }}
+      className="w-screen overflow-scroll"
+      style={{ whiteSpace: "nowrap", height: window.innerHeight }}
     >
       <div className="w-[300vw]">
         <svg
